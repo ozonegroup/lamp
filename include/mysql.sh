@@ -19,7 +19,10 @@ mysql_preinstall_settings(){
     if version_lt ${libc_version} 2.14; then
         mysql_arr=(${mysql_arr[@]#${mariadb10_3_filename}})
     fi
-    display_menu mysql 3
+    
+	if [ -z "mysql" ] ; then
+	    display_menu mysql 3
+	fi
 
     if [ "${mysql}" != "do_not_install" ];then
         if echo "${mysql}" | grep -qi "mysql"; then
