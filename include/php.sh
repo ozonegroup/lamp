@@ -17,9 +17,9 @@ php_preinstall_settings(){
     if [[ "${apache}" == "do_not_install" ]]; then
         php="do_not_install"
     else
-		if [ -z "php" ] ; then
+		#if [ -z "php" ] ; then
 		     display_menu php 1
-		fi
+		#fi
     fi
 
     if [ "${php}" != "do_not_install" ]; then
