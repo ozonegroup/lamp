@@ -40,13 +40,14 @@ mysql_preinstall_settings(){
 
         elif echo "${mysql}" | grep -qi "mariadb"; then
             #mariadb data
-            echo
+            if [ -z "mariadb_data_location" ] ; then
+			echo
             read -p "mariadb data location(default:${mariadb_location}/data, leave blank for default): " mariadb_data_location
             mariadb_data_location=${mariadb_data_location:=${mariadb_location}/data}
             mariadb_data_location=`filter_location "${mariadb_data_location}"`
             echo
             echo "mariadb data location: ${mariadb_data_location}"
-
+			fi
             #set mariadb server root password
             echo
             read -p "mariadb server root password (default:root, leave blank for default): " mariadb_root_pass

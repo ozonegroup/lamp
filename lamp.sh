@@ -14,6 +14,17 @@
 # Website:  https://lamp.sh
 # Github:   https://github.com/teddysun/lamp
 
+apache='httpd-2.4.33'
+apache_modules_install=('modsecurity-2.9.2')
+mysql='mariadb-10.3.7'
+mysql_location='/usr/local/mysql'
+mysql_data_location='/usr/local/mysql/data'
+php='php-7.2.7'
+php_modules_install=('imagick-3.4.3','gmagick-2.0.5RC1')
+phpmyadmin='phpMyAdmin-4.8.2-all-languages'
+mariadb_location='/usr/local/mariadb'
+mariadb_data_location='/usr/local/mariadb/data'
+
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
