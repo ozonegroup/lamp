@@ -45,7 +45,7 @@ phpmyadmin_preinstall_settings(){
     if [[ "${php}" == "do_not_install" ]]; then
         phpmyadmin="do_not_install"
     else
-		if [ -z "phpmyadmin" ] ; then
+		if [ -z "$phpmyadmin" ] ; then
 		    display_menu phpmyadmin 1
 		fi
     fi
@@ -56,7 +56,7 @@ kodexplorer_preinstall_settings(){
     if [[ "${php}" == "do_not_install" ]]; then
         kodexplorer="do_not_install"
     else
-		if [ -z "kodexplorer" ] ; then
+		if [ -z "$kodexplorer" ] ; then
 		    display_menu kodexplorer 1
 		fi
     fi

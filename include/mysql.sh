@@ -20,7 +20,7 @@ mysql_preinstall_settings(){
         mysql_arr=(${mysql_arr[@]#${mariadb10_3_filename}})
     fi
     
-	if [ -z "mysql" ] ; then
+	if [ -z "$mysql" ] ; then
 	    display_menu mysql 3
 	fi
 
@@ -43,7 +43,7 @@ mysql_preinstall_settings(){
 
         elif echo "${mysql}" | grep -qi "mariadb"; then
             #mariadb data
-            if [ -z "mariadb_data_location" ] ; then
+            if [ -z "$mariadb_data_location" ] ; then
 			echo
             read -p "mariadb data location(default:${mariadb_location}/data, leave blank for default): " mariadb_data_location
             mariadb_data_location=${mariadb_data_location:=${mariadb_location}/data}
@@ -52,7 +52,7 @@ mysql_preinstall_settings(){
             echo "mariadb data location: ${mariadb_data_location}"
 			fi
             #set mariadb server root password
-            if [ -z "mariadb_root_pass" ] ; then
+            if [ -z "$mariadb_root_pass" ] ; then
 			echo
             read -p "mariadb server root password (default:root, leave blank for default): " mariadb_root_pass
             mariadb_root_pass=${mariadb_root_pass:=root}
