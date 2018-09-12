@@ -35,12 +35,14 @@ mysql_preinstall_settings(){
             echo "mysql data location: ${mysql_data_location}"
 
             #set mysql server root password
-			if [ -z "$dbrootpwd" ] ; then
+			if [ -z "$dbroot" ] ; then
             	echo
             	read -p "mysql server root password (default:root, leave blank for default): " mysql_root_pass
             	mysql_root_pass=${mysql_root_pass:=root}
             	echo
             	echo "mysql server root password: ${mysql_root_pass}"
+			else
+				mysql_root_pass=$dbroot
 			fi
 
         elif echo "${mysql}" | grep -qi "mariadb"; then
@@ -54,12 +56,14 @@ mysql_preinstall_settings(){
             	echo "mariadb data location: ${mariadb_data_location}"
 			fi
             #set mariadb server root password
-            if [ -z "$dbrootpwd" ] ; then
+            if [ -z "$dbroot" ] ; then
 				echo
             	read -p "mariadb server root password (default:root, leave blank for default): " mariadb_root_pass
             	mariadb_root_pass=${mariadb_root_pass:=root}
             	echo
             	echo "mariadb server root password: $mariadb_root_pass"
+			else
+				mariadb_root_pass=$dbroot
 			fi
 
         elif echo "${mysql}" | grep -qi "Percona"; then
@@ -72,12 +76,14 @@ mysql_preinstall_settings(){
             echo "percona data location: $percona_data_location"
 
             #set percona server root password
-			if [ -z "$dbrootpwd" ] ; then
+			if [ -z "$dbroot" ] ; then
             	echo
             	read -p "percona server root password (default:root, leave blank for default): " percona_root_pass
             	percona_root_pass=${percona_root_pass:=root}
             	echo
             	echo "percona server root password: ${percona_root_pass}"
+			else
+				percona_root_pass=$dbroot
 			fi
 
         fi

@@ -18,7 +18,7 @@ while getopts p: option
 do 
 case "${option}" 
 	in 
-	p) dbrootpwd=${OPTARG};;
+	p) dbroot=${OPTARG};;
 esac 
 done 
 
