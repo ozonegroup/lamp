@@ -14,7 +14,7 @@
 #Pre-installation apache
 apache_preinstall_settings(){
 	
-	if [ -z "apache" ] ; then
+	if [ -z "$apache" ] ; then
     	display_menu apache 1
     	display_menu_multi apache_modules last
 	fi
