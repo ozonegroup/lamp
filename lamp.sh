@@ -22,16 +22,16 @@ case "${option}"
 esac 
 done 
 
-apache='httpd-2.4.34'
-apache_modules_install=('modsecurity-2.9.2')
-mysql='mariadb-10.3.9'
-mysql_location='/usr/local/mysql'
-mysql_data_location='/usr/local/mysql/data'
-php_modules_install=('imagick-3.4.3','php-gmagick-1.1.7RC3')
-phpmyadmin='phpMyAdmin-4.8.3-all-languages'
-mariadb_location='/usr/local/mariadb'
-mariadb_data_location='/usr/local/mariadb/data'
-kodexplorer="do_not_install"
+#apache='httpd-2.4.34'
+#apache_modules_install=('modsecurity-2.9.2')
+#mysql='mariadb-10.3.9'
+#mysql_location='/usr/local/mysql'
+#mysql_data_location='/usr/local/mysql/data'
+#php_modules_install=('imagick-3.4.3','php-gmagick-1.1.7RC3')
+#phpmyadmin='phpMyAdmin-4.8.3-all-languages'
+#mariadb_location='/usr/local/mariadb'
+#mariadb_data_location='/usr/local/mariadb/data'
+#kodexplorer="do_not_install"
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
