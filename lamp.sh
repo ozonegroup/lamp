@@ -18,7 +18,7 @@ while getopts p: option
 do 
 case "${option}" 
 	in 
-	p) mariadb_root_pass=${OPTARG};;
+	p) dbrootpwd=${OPTARG};;
 esac 
 done 
 

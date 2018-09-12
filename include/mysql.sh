@@ -35,29 +35,31 @@ mysql_preinstall_settings(){
             echo "mysql data location: ${mysql_data_location}"
 
             #set mysql server root password
-            echo
-            read -p "mysql server root password (default:root, leave blank for default): " mysql_root_pass
-            mysql_root_pass=${mysql_root_pass:=root}
-            echo
-            echo "mysql server root password: ${mysql_root_pass}"
+			if [ -z "$dbrootpwd" ] ; then
+            	echo
+            	read -p "mysql server root password (default:root, leave blank for default): " mysql_root_pass
+            	mysql_root_pass=${mysql_root_pass:=root}
+            	echo
+            	echo "mysql server root password: ${mysql_root_pass}"
+			fi
 
         elif echo "${mysql}" | grep -qi "mariadb"; then
             #mariadb data
             if [ -z "$mariadb_data_location" ] ; then
-			echo
-            read -p "mariadb data location(default:${mariadb_location}/data, leave blank for default): " mariadb_data_location
-            mariadb_data_location=${mariadb_data_location:=${mariadb_location}/data}
-            mariadb_data_location=`filter_location "${mariadb_data_location}"`
-            echo
-            echo "mariadb data location: ${mariadb_data_location}"
+				echo
+            	read -p "mariadb data location(default:${mariadb_location}/data, leave blank for default): " mariadb_data_location
+            	mariadb_data_location=${mariadb_data_location:=${mariadb_location}/data}
+            	mariadb_data_location=`filter_location "${mariadb_data_location}"`
+            	echo
+            	echo "mariadb data location: ${mariadb_data_location}"
 			fi
             #set mariadb server root password
-            if [ -z "$mariadb_root_pass" ] ; then
-			echo
-            read -p "mariadb server root password (default:root, leave blank for default): " mariadb_root_pass
-            mariadb_root_pass=${mariadb_root_pass:=root}
-            echo
-            echo "mariadb server root password: $mariadb_root_pass"
+            if [ -z "$dbrootpwd" ] ; then
+				echo
+            	read -p "mariadb server root password (default:root, leave blank for default): " mariadb_root_pass
+            	mariadb_root_pass=${mariadb_root_pass:=root}
+            	echo
+            	echo "mariadb server root password: $mariadb_root_pass"
 			fi
 
         elif echo "${mysql}" | grep -qi "Percona"; then
@@ -70,11 +72,13 @@ mysql_preinstall_settings(){
             echo "percona data location: $percona_data_location"
 
             #set percona server root password
-            echo
-            read -p "percona server root password (default:root, leave blank for default): " percona_root_pass
-            percona_root_pass=${percona_root_pass:=root}
-            echo
-            echo "percona server root password: ${percona_root_pass}"
+			if [ -z "$dbrootpwd" ] ; then
+            	echo
+            	read -p "percona server root password (default:root, leave blank for default): " percona_root_pass
+            	percona_root_pass=${percona_root_pass:=root}
+            	echo
+            	echo "percona server root password: ${percona_root_pass}"
+			fi
 
         fi
     fi
