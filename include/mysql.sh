@@ -52,11 +52,13 @@ mysql_preinstall_settings(){
             echo "mariadb data location: ${mariadb_data_location}"
 			fi
             #set mariadb server root password
-            echo
+            if [ -z "mariadb_root_pass" ] ; then
+			echo
             read -p "mariadb server root password (default:root, leave blank for default): " mariadb_root_pass
             mariadb_root_pass=${mariadb_root_pass:=root}
             echo
             echo "mariadb server root password: $mariadb_root_pass"
+			fi
 
         elif echo "${mysql}" | grep -qi "Percona"; then
             #percona data
