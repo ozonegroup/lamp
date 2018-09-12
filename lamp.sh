@@ -14,6 +14,14 @@
 # Website:  https://lamp.sh
 # Github:   https://github.com/teddysun/lamp
 
+while getopts p: option 
+do 
+case "${option}" 
+	in 
+	p) mariadb_root_pass=${OPTARG};;
+esac 
+done 
+
 apache='httpd-2.4.34'
 apache_modules_install=('modsecurity-2.9.2')
 mysql='mariadb-10.3.9'
