@@ -793,9 +793,9 @@ last_confirm(){
     echo "---------------------------------------------------------------------"
     echo
 
-    echo "Press any key to start...or Press Ctrl+C to cancel"
-    echo
-    char=`get_char`
+    #echo "Press any key to start...or Press Ctrl+C to cancel"
+    #echo
+    #char=`get_char`
 
     StartDate=$(date "+%Y-%m-%d %H:%M:%S")
     StartDateSecond=$(date +%s)
