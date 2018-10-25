@@ -25,6 +25,7 @@ mariadb_location='/usr/local/mariadb'
 mariadb_data_location='/usr/local/mariadb/data'
 kodexplorer="do_not_install"
 dbroot="websitebar777."
+php='php-7.1.21'
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
