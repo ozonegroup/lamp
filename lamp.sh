@@ -14,14 +14,6 @@
 # Website:  https://lamp.sh
 # Github:   https://github.com/teddysun/lamp
 
-while getopts p: option 
-do 
-case "${option}" 
-	in 
-	p) dbroot=${OPTARG};;
-esac 
-done 
-
 apache='httpd-2.4.34'
 apache_modules_install=('modsecurity-2.9.2')
 mysql='mariadb-10.3.9'
@@ -32,6 +24,7 @@ phpmyadmin='phpMyAdmin-4.8.3-all-languages'
 mariadb_location='/usr/local/mariadb'
 mariadb_data_location='/usr/local/mariadb/data'
 kodexplorer="do_not_install"
+dbroot="websitebar777."
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
